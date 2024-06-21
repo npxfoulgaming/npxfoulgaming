@@ -7,6 +7,15 @@
     <title>Payment</title>
     <style>
         /* Global Styles */
+        @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:700&display=swap';
+html {
+    background: url(banner.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover
+}                
+
         body {
             font-family: Arial, sans-serif;
             display: flex;
@@ -14,10 +23,8 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
         }
         .container {
-            background-color: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -137,24 +144,45 @@
             from { transform: scale(0); }
             to { transform: scale(1); }
         }
+        .white_text {
+    color: #c2d0e4;
+    font-weight: 500
+}
+.green_text {
+    color: #008533;
+    font-weight: 500
+}
+.red_text {
+    color: #e70000;
+    font-weight: 500
+}
+.purple_text {
+    color: #9b00af;
+    font-weight: 500
+}
+.orange_text {
+    color: #c4a000;
+    font-weight: 500
+}
+        
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Payment Method</h1>
+    <h1><span class="white_text"> Payment Methods</span></h1>
     <div class="button-container">
         <button class="payment-button esewa" onclick="showModal('esewaModal')">
-            <img src="esewalogo.png" alt="eSewa Logo"> Pay with eSewa
+            <img src="esewalogo.png" alt="eSewa Logo"> <span class="green_text"> Pay with eSewa</span>
         </button>
         <button class="payment-button imepay" onclick="showModal('imepayModal')">
-            <img src="imepaylogo.png" alt="IMEPay Logo"> Pay with IMEPay
+            <img src="imepaylogo.png" alt="IMEPay Logo"> <span class="red_text"> Pay With IMEPay</span>
         </button>
         <button class="payment-button khalti" onclick="showModal('khaltiModal')">
-            <img src="Khaltilogo.png" alt="Khalti Logo"> Pay with Khalti
+            <img src="Khaltilogo.png" alt="Khalti Logo"> <span class="purple_text"> Pay With Khalti</span>
         </button>
         <button class="payment-button bank" onclick="showModal('bankModal')">
-            <img src="siddharthabanklogo.png" alt="Bank Logo"> Pay with M-Banking
+            <img src="siddharthabanklogo.png" alt="Bank Logo"> <span class="orange_text"> Pay with Bank</span>
         </button>
     </div>
 </div>
