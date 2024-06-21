@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="logo.png" />
+    <title>Payment</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 90%;
+        }
+
+        /* Payment Button Styles */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .payment-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 50px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .payment-button img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        .payment-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .payment-button:focus {
+            outline: none;
+        }
+        .payment-button.esewa { background-color: #93eb96; color: white; }
+        .payment-button.imepay { background-color: #dd9063; color: white; }
+        .payment-button.khalti { background-color: #8054cc; color: white; }
+        .payment-button.bank { background-color: #c4c26b; color: white; }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            width: 80%;
+            animation: zoomIn 0.3s;
+            position: relative; /* Added for positioning close button */
+        }
+        .modal-content h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+        .modal-content img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .modal-content img:hover {
+            transform: scale(1.1);
+        }
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .button-container {
+                flex-direction: column;
+            }
+            .payment-button {
+                width: 100%;
+                margin: 10px 0;
+            }
+            .modal-content {
+                width: 90%;
+            }
+        }
+
+        /* Keyframes for Animation */
+        @keyframes zoomIn {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Show Some Support By Making Payment</h1>
+    <div class="button-container">
+        <button class="payment-button esewa" onclick="showModal('esewaModal')">
+            <img src="esewalogo.png" alt="eSewa Logo"> Pay with eSewa
+        </button>
+        <button class="payment-button imepay" onclick="showModal('imepayModal')">
+            <img src="imepaylogo.png" alt="IMEPay Logo"> Pay with IMEPay
+        </button>
+        <button class="payment-button khalti" onclick="showModal('khaltiModal')">
+            <img src="Khaltilogo.png" alt="Khalti Logo"> Pay with Khalti
+        </button>
+        <button class="payment-button bank" onclick="showModal('bankModal')">
+            <img src="siddharthabanklogo.png" alt="Bank Logo"> Pay with M-Banking
+        </button>
+    </div>
+</div>
+
+<!-- Modals for QR Codes -->
+<div id="esewaModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('esewaModal')">&times;</span>
+        <h2>eSewa Payment</h2>
+        <img src="Esewa.jpg" alt="eSewa QR Code">
+    </div>
+</div>
+
+<div id="imepayModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('imepayModal')">&times;</span>
+        <h2>IMEPay Payment</h2>
+        <img src="IMEPAY.png" alt="IMEPay QR Code">
+    </div>
+</div>
+
+<div id="khaltiModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('khaltiModal')">&times;</span>
+        <h2>Khalti Payment</h2>
+        <img src="Khalti.png" alt="Khalti QR Code">
+    </div>
+</div>
+
+<div id="bankModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('bankModal')">&times;</span>
+        <h2>M-Banking Payment</h2>
+        <img src="BANK.png" alt="Bank QR Code">
+    </div>
+</div>
+
+<script>
+    // Function to show modal
+    function showModal(modalId) {
+        document.getElementById(modalId).style.display = "flex";
+    }
+
+    // Function to close modal
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+
+    // Close modal if clicked outside of modal content
+    window.onclick = function(event) {
+        let modals = document.getElementsByClassName("modal");
+        for (let modal of modals) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
