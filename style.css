@@ -121,6 +121,10 @@ a {
 .green {
     color: #317a45 !important
 }
+.yellow {
+    color: #FFFF00;
+    font-weight: 500
+}
 
 .container {
     flex-grow: 1;
