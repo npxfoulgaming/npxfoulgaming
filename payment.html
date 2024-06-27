@@ -69,6 +69,8 @@ html {
         .payment-button.imepay { background-color: #dd9063; color: white; }
         .payment-button.khalti { background-color: #8054cc; color: white; }
         .payment-button.bank { background-color: #c4c26b; color: white; }
+        .payment-button.payoneer { background-color: #8054cc; color: white; }
+        .payment-button.paypal { background-color: #c4c26b; color: white; }
 
         /* Modal Styles */
         .modal {
@@ -164,6 +166,10 @@ html {
     color: #c4a000;
     font-weight: 500
 }
+.blue_text {
+    color: #00457C;
+    font-weight: 500
+}
         
     </style>
 </head>
@@ -183,6 +189,12 @@ html {
         </button>
         <button class="payment-button bank" onclick="showModal('bankModal')">
             <img src="siddharthabanklogo.png" alt="Bank Logo"> <span class="orange_text"> Pay with Bank</span>
+        </button>
+         <button class="payment-button paypal" onclick="showModal('paypalModal')">
+            <img src="paypal.png" alt="paypal Logo"> <span class="Blue_text"> Pay with PayPal</span>
+        </button>
+         <button class="payment-button payoneer" onclick="showModal('payoneerModal')">
+            <img src="spayoneer.png" alt="payoneer Logo"> <span class="orange_text"> Pay with Payoneer</span>
         </button>
     </div>
 </div>
@@ -215,11 +227,24 @@ html {
 <div id="bankModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal('bankModal')">&times;</span>
-        <h2>M-Banking Payment</h2>
+        <h2>Bank Payment</h2>
         <img src="BANK.png" alt="Bank QR Code">
     </div>
 </div>
-
+<div id="paypalModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('paypalModal')">&times;</span>
+        <h2>PayPal Payment</h2>
+        <img src="paypalqr.png" alt="PayPal QR Code">
+    </div>
+</div>    
+<div id="payoneerModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('payoneerModal')">&times;</span>
+        <h2>Payoneer Payment</h2>
+        <img src="payoneerqr.png" alt="payoneer QR Code">
+    </div>
+</div>
 <script>
     // Function to show modal
     function showModal(modalId) {
