@@ -146,7 +146,7 @@ html {
             from { transform: scale(0); }
             to { transform: scale(1); }
         }
-        .white_text {
+        .white1_text {
     color: #c2d0e4;
     font-weight: 500
 }
@@ -154,18 +154,14 @@ html {
     color: #008533;
     font-weight: 500
 }
-.red_text {
-    color: #e70000;
+.yellow_text {
+    color: #f1c232;
     font-weight: 500
 }
-.purple_text {
-    color: #9b00af;
+.black_text {
+    color: #000000;
     font-weight: 500
-}
-.orange_text {
-    color: #c4a000;
-    font-weight: 500
-}
+
 .white_text {
     color: #ffffff;
     font-weight: 500
@@ -179,25 +175,25 @@ html {
 <body>
 
 <div class="container">
-    <h1><span class="white_text"> Payment Methods</span></h1>
+    <strong><h1><span class="white1_text"> Payment Methods</span></h1></strong>
     <div class="button-container">
         <button class="payment-button esewa" onclick="showModal('esewaModal')">
-            <img src="esewalogo.png" alt="eSewa Logo"> <span class="green_text"> Pay with eSewa</span>
+            <img src="esewalogo.png" alt="eSewa Logo"> <span class="green_text"> Pay with</span><span class="white_text"> eSewa</span>
         </button>
         <button class="payment-button imepay" onclick="showModal('imepayModal')">
-            <img src="imepaylogo.png" alt="IMEPay Logo"> <span class="red_text"> Pay With IMEPay</span>
+            <img src="imepaylogo.png" alt="IMEPay Logo"> <span class="white_text"> Pay With IMEPay</span>
         </button>
         <button class="payment-button khalti" onclick="showModal('khaltiModal')">
-            <img src="Khaltilogo.png" alt="Khalti Logo"> <span class="purple_text"> Pay With Khalti</span>
+            <img src="Khaltilogo.png" alt="Khalti Logo"> <span class="yellow_text"> Pay With Khalti</span>
         </button>
         <button class="payment-button bank" onclick="showModal('bankModal')">
-            <img src="siddharthabanklogo.png" alt="Bank Logo"> <span class="orange_text"> Pay with Bank</span>
+            <img src="siddharthabanklogo.png" alt="Bank Logo"> <span class="black_text"> Pay with Bank</span>
         </button>
          <button class="payment-button paypal" onclick="showModal('paypalModal')">
             <img src="paypal.png" alt="paypal Logo"> <span class="white_text"> Pay with PayPal</span>
         </button>
          <button class="payment-button payoneer" onclick="showModal('payoneerModal')">
-            <img src="payoneer.png" alt="payoneer Logo"> <span class="blue_text"> Pay with Payoneer</span>
+            <img src="payoneer.png" alt="payoneer Logo"> <span class="black_text"> Pay with Payoneer</span>
         </button>
     </div>
 </div>
