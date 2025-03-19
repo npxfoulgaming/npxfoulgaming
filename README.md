@@ -11,3 +11,5 @@
 
 ---
 [![](https://visitcount.itsvg.in/api?id=npxfoulgaming&icon=0&color=0)](https://visitcount.itsvg.in)
+
+[![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=npxfoulgaming&bg_color=000000&color=ff0000&line=00d5ff&point=767565&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
